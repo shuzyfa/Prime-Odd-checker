@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT For loop</title>
+</head>
+<body>
+    <h1>HUZAIFA BIN ARIF</h1>
+<br><br>
+<p style="font-size: large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">This Program will check, the given number is prime and Odd both</p>
+    <input type="number" id="num">
+    <button type="button" onclick="primeOdd(num.value)">Check</button>
+  
+    <h3 id="demo" style=" font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></h3>
+
+<script>
+
+
+function primeNumber(n)
+{
+
+    var isPrime= true;
+    if (n<=1)
+    {
+        isPrime=false;
+    }
+    else if (n>1)
+    {
+        
+        for (let i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    return isPrime;
+}
+
+function primeOdd(n) 
+{
+    
+    if(primeNumber(n))
+    {
+        if(!(n%2==0))
+        {
+            document.getElementById("demo").innerText = "Number is prime and odd";
+    
+        }
+        else
+        {
+            document.getElementById("demo").innerText = "Number is just prime";
+        }
+    }
+    else
+    {   
+         document.getElementById("demo").innerText = "Number is not prime";
+    }
+}
+
+</script>
+</body>
+</html>
